@@ -1,0 +1,1 @@
+drop table MIMISMART_NOMENCLATURE__U98224 if exists cascade ;

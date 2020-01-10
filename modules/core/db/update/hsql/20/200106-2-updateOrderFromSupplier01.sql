@@ -1,0 +1,1 @@
+alter table MIMISMART_ORDER_FROM_SUPPLIER add column NOMENCLATURE_ID varchar(36) ;

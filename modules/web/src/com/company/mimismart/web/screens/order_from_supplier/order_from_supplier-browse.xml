@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="order_from_suppliersTable"
+        messagesPack="com.company.mimismart.web.screens.order_from_supplier">
+    <data readOnly="true">
+        <collection id="order_from_suppliersDc"
+                    class="com.company.mimismart.entity.Order_from_supplier"
+                    view="order_with_supplier_and_status">
+            <loader id="order_from_suppliersDl">
+                <query>
+                    <![CDATA[select e from mimismart_Order_from_supplier e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="order_from_suppliersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="order_from_suppliersTable"
+                dataLoader="order_from_suppliersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="order_from_suppliersTable"
+                    width="100%"
+                    dataContainer="order_from_suppliersDc" multiselect="true">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action type="bulkEdit" id="bulkEdit"/>
+            </actions>
+            <columns>
+                <column id="supplier"/>
+                <column id="order_num"/>
+                <column id="date"/>
+                <column id="name"/>
+                <column id="status" optionsContainer="order_from_suppliersDc"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="order_from_suppliersTable.create" stylename="primary"/>
+                <button id="editBtn" action="order_from_suppliersTable.edit"/>
+                <button id="removeBtn" action="order_from_suppliersTable.remove"/>
+                <button id="bulkEditButton" action="order_from_suppliersTable.bulkEdit"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

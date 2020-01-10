@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="mimismart" insertBefore="administration">
+        <item screen="mimismart_Supplier.browse"/>
+        <item screen="mimismart_Order_from_supplier.browse"/>
+    </menu>
+    <menu id="mimismart2" insertBefore="administration">
+        <item screen="mimismart_Nomenclature.browse"/>
+        <item screen="mimismart_Units.browse"/>
+        <item screen="mimismart_OrderStatus.browse"/>
+    </menu>
+</menu-config>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.mimismart.web.screens.order_from_supplier">
+    <data>
+        <instance id="order_from_supplierDc"
+                  class="com.company.mimismart.entity.Order_from_supplier"
+                  view="order_with_supplier_and_status">
+            <loader/>
+            <collection id="order_from_supplierNomenklaturesesDc" property="nomenklatures">
+            </collection>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="order_from_supplierDc">
+            <column width="250px">
+                <pickerField id="supplierField" property="supplier" required="true">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="open" type="picker_open" openType="DIALOG"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <textField id="order_numField" property="order_num"/>
+                <dateField id="dateField" property="date"/>
+                <textField id="nameField" property="name"/>
+                <pickerField id="statusField" property="status" required="true">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <groupTable id="order_from_supplierNomenklaturesTable" height="400px" width="100%" dataContainer="order_from_supplierNomenklaturesesDc"
+                    editable="true" metaClass="mimismart_Nomenclature">
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+            </columns>
+            <actions>
+                <action id="add" type="add"/>
+                <action id="exclude" type="exclude"/>
+            </actions>
+            <buttonsPanel>
+                <button id="addButton" action="order_from_supplierNomenklaturesTable.add"/>
+                <button id="excludeButton" action="order_from_supplierNomenklaturesTable.exclude"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

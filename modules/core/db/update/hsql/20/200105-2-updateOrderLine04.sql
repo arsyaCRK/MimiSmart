@@ -1,0 +1,3 @@
+alter table MIMISMART_ORDER_LINE alter column UNITS_ID rename to UNITS_ID__U47353 ^
+alter table MIMISMART_ORDER_LINE drop constraint FK_MIMISMART_ORDER_LINE_ON_UNITS ;
+drop index IDX_MIMISMART_ORDER_LINE_ON_UNITS ;

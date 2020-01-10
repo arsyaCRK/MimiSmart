@@ -1,0 +1,1 @@
+drop table MIMISMART_ORDER_LINE__U82369 if exists cascade ;

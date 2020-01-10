@@ -1,0 +1,1 @@
+alter table MIMISMART_ORDERS rename to MIMISMART_ORDERS__U69512 ;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="mimismart_Order_from_supplier" name="order_with_supplier_and_status" extends="_local">
+        <property name="supplier" view="_minimal"/>
+        <property name="status" view="_minimal"/>
+        <property name="nomenklatures" view="_base">
+            <property name="unit" view="_minimal"/>
+        </property>
+    </view>
+    <view entity="mimismart_Nomenclature" name="nomenclature-view" extends="_minimal">
+        <property name="unit" view="_minimal"/>
+        <property name="description"/>
+        <property name="order_from_supplier" view="_minimal">
+        </property>
+    </view>
+</views>

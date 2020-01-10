@@ -1,0 +1,27 @@
+@import "hover-defaults";
+@import "com.company.mimismart/hover-ext-defaults";
+@import "app-components";
+@import "com.company.mimismart/hover-ext";
+
+.hover {
+  // include auto-generated app components SCSS
+  @include app_components;
+
+  @include com_company_mimismart-hover-ext;
+
+}
+
+.v-table-cell-content.new {
+    background-color: #badcfe;
+    color: black;
+}
+
+.v-table-cell-content.full {
+    background-color: #79e5cb;
+    color: black;
+}
+
+.v-table-cell-content.half {
+    background-color: #f7f7ad;
+    color: black;
+}

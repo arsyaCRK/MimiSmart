@@ -1,0 +1,5 @@
+@import "hover-ext";
+
+@mixin com_company_mimismart {
+  @include com_company_mimismart-hover-ext;
+}
