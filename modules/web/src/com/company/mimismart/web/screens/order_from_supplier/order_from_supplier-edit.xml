@@ -39,6 +39,7 @@
                     editable="true" metaClass="mimismart_Nomenclature">
             <columns>
                 <column id="name" caption="msg://Name"/>
+                <column id="order_from_supplier.qty" editable="true"/>
                 <column id="unit.name" caption="msg://Units"/>
                 <column id="description"/>
             </columns>
