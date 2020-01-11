@@ -38,8 +38,7 @@
         <groupTable id="order_from_supplierNomenklaturesTable" height="400px" width="100%" dataContainer="order_from_supplierNomenklaturesesDc"
                     editable="true" metaClass="mimismart_Nomenclature">
             <columns>
-                <column id="name" caption="msg://Name"/>
-                <column id="order_from_supplier.qty" editable="true"/>
+                <column id="name"/>
                 <column id="unit.name" caption="msg://Units"/>
                 <column id="description"/>
             </columns>

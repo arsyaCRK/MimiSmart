@@ -23,9 +23,6 @@ public class Order_from_supplier extends StandardEntity {
     @JoinColumn(name = "SUPPLIER_ID")
     protected Supplier supplier;
 
-    @Column(name = "QTY")
-    protected Integer qty;
-
     @NotNull
     @Column(name = "ORDER_NUM", nullable = false)
     protected BigDecimal order_num;
@@ -48,14 +45,6 @@ public class Order_from_supplier extends StandardEntity {
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "order_from_supplier")
     protected Set<Nomenclature> nomenklatures;
-
-    public Integer getQty() {
-        return qty;
-    }
-
-    public void setQty(Integer qty) {
-        this.qty = qty;
-    }
 
     public void setNomenklatures(Set<Nomenclature> nomenklatures) {
         this.nomenklatures = nomenklatures;

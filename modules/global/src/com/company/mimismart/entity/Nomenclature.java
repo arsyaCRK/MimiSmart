@@ -7,7 +7,7 @@ import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
+import java.util.List;
 
 @NamePattern("%s|name")
 @Table(name = "MIMISMART_NOMENCLATURE")
