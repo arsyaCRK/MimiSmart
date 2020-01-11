@@ -1,9 +1,7 @@
 package com.company.mimismart.entity;
 
-import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
@@ -41,17 +39,18 @@ public class Order_from_supplier extends StandardEntity {
     @JoinColumn(name = "STATUS_ID")
     protected OrderStatus status;
 
-    @Composition
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToMany(mappedBy = "order_from_supplier")
-    protected Set<Nomenclature> nomenklatures;
+    @JoinTable(name = "MIMISMART_NOMENCLATURE_ORDER_FROM_SUPPLIER_LINK",
+            joinColumns = @JoinColumn(name = "ORDER_FROM_SUPPLIER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "NOMENCLATURE_ID"))
+    @ManyToMany
+    protected Set<Nomenclature> nomenclatures;
 
-    public void setNomenklatures(Set<Nomenclature> nomenklatures) {
-        this.nomenklatures = nomenklatures;
+    public void setNomenclatures(Set<Nomenclature> nomenclatures) {
+        this.nomenclatures = nomenclatures;
     }
 
-    public Set<Nomenclature> getNomenklatures() {
-        return nomenklatures;
+    public Set<Nomenclature> getNomenclatures() {
+        return nomenclatures;
     }
 
     public OrderStatus getStatus() {

@@ -1,0 +1,1 @@
+alter table MIMISMART_NOMENCLATURE drop column ORDER_FROM_SUPPLIER_ID__U23775 cascade ;

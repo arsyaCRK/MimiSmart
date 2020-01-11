@@ -8,7 +8,7 @@
                   class="com.company.mimismart.entity.Order_from_supplier"
                   view="order_with_supplier_and_status">
             <loader/>
-            <collection id="order_from_supplierNomenklaturesesDc" property="nomenklatures">
+            <collection id="order_from_supplierNomenklaturesesDc" property="nomenclatures">
             </collection>
         </instance>
     </data>
@@ -36,7 +36,7 @@
             </column>
         </form>
         <groupTable id="order_from_supplierNomenklaturesTable" height="400px" width="100%" dataContainer="order_from_supplierNomenklaturesesDc"
-                    editable="true" metaClass="mimismart_Nomenclature">
+                    editable="true">
             <columns>
                 <column id="name"/>
                 <column id="unit.name" caption="msg://Units"/>

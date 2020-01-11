@@ -1,0 +1,5 @@
+create table MIMISMART_NOMENCLATURE_ORDER_FROM_SUPPLIER_LINK (
+    ORDER_FROM_SUPPLIER_ID varchar(36) not null,
+    NOMENCLATURE_ID varchar(36) not null,
+    primary key (ORDER_FROM_SUPPLIER_ID, NOMENCLATURE_ID)
+);
