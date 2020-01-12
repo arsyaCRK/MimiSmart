@@ -7,7 +7,7 @@
         <instance id="order_from_supplierDc"
                   class="com.company.mimismart.entity.Order_from_supplier"
                   view="order_with_supplier_and_status">
-            <loader/>
+            <loader entityId="" id=""/>
             <collection id="order_from_supplierNomenklaturesesDc" property="nomenclatures">
             </collection>
         </instance>
@@ -20,7 +20,7 @@
                 <pickerField id="supplierField" property="supplier" required="true">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>
-                        <action id="open" type="picker_open" openType="DIALOG"/>
+                        <action id="open" openType="DIALOG" type="picker_open"/>
                         <action id="clear" type="picker_clear"/>
                     </actions>
                 </pickerField>
