@@ -4,14 +4,22 @@
     <view entity="mimismart_Order_from_supplier" name="order_with_supplier_and_status" extends="_local">
         <property name="supplier" view="_minimal"/>
         <property name="status" view="_minimal"/>
-        <property name="nomenclatures" view="_base">
-            <property name="unit" view="_minimal"/>
+        <property name="orderlines" view="_minimal">
+            <property name="nomenklatura" view="_minimal">
+                <property name="unit" view="_minimal"/>
+                <property name="description"/>
+            </property>
+            <property name="quantity"/>
+            <property name="qtyfact"/>
         </property>
     </view>
     <view entity="mimismart_Nomenclature" name="nomenclature-view" extends="_minimal">
         <property name="unit" view="_minimal"/>
         <property name="description"/>
-        <property name="order_from_supplier" view="_minimal">
+    </view>
+    <view entity="mimismart_OrderLine" name="orderLine-view" extends="_local">
+        <property name="nomenklatura" view="_minimal">
+            <property name="description"/>
         </property>
     </view>
 </views>

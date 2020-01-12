@@ -7,5 +7,6 @@
         <class>com.company.mimismart.entity.OrderStatus</class>
         <class>com.company.mimismart.entity.Units</class>
         <class>com.company.mimismart.entity.Nomenclature</class>
+        <class>com.company.mimismart.entity.OrderLine</class>
     </persistence-unit>
 </persistence>

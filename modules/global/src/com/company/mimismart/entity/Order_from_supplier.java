@@ -1,7 +1,9 @@
 package com.company.mimismart.entity;
 
+import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
@@ -9,7 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 @NamePattern("%s|name")
 @Table(name = "MIMISMART_ORDER_FROM_SUPPLIER")
@@ -39,18 +41,17 @@ public class Order_from_supplier extends StandardEntity {
     @JoinColumn(name = "STATUS_ID")
     protected OrderStatus status;
 
-    @JoinTable(name = "MIMISMART_NOMENCLATURE_ORDER_FROM_SUPPLIER_LINK",
-            joinColumns = @JoinColumn(name = "ORDER_FROM_SUPPLIER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "NOMENCLATURE_ID"))
-    @ManyToMany
-    protected Set<Nomenclature> nomenclatures;
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "order")
+    protected List<OrderLine> orderlines;
 
-    public void setNomenclatures(Set<Nomenclature> nomenclatures) {
-        this.nomenclatures = nomenclatures;
+    public List<OrderLine> getOrderlines() {
+        return orderlines;
     }
 
-    public Set<Nomenclature> getNomenclatures() {
-        return nomenclatures;
+    public void setOrderlines(List<OrderLine> orderlines) {
+        this.orderlines = orderlines;
     }
 
     public OrderStatus getStatus() {

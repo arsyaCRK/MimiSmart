@@ -29,19 +29,6 @@ public class Nomenclature extends StandardEntity {
     @Column(name = "DESCRIPTION")
     protected String description;
 
-    @JoinTable(name = "MIMISMART_NOMENCLATURE_ORDER_FROM_SUPPLIER_LINK", joinColumns = @JoinColumn(name = "NOMENCLATURE_ID"), inverseJoinColumns = @JoinColumn(name = "ORDER_FROM_SUPPLIER_ID"))
-    @ManyToMany
-    @OnDeleteInverse(DeletePolicy.DENY)
-    protected Set<Order_from_supplier> order_from_supplier;
-
-    public void setOrder_from_supplier(Set<Order_from_supplier> order_from_supplier) {
-        this.order_from_supplier = order_from_supplier;
-    }
-
-    public Set<Order_from_supplier> getOrder_from_supplier() {
-        return order_from_supplier;
-    }
-
     public String getDescription() {
         return description;
     }
