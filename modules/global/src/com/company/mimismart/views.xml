@@ -5,12 +5,14 @@
         <property name="supplier" view="_minimal"/>
         <property name="status" view="_minimal"/>
         <property name="orderlines" view="_minimal">
+            <property name="date"/>
             <property name="nomenklatura" view="_minimal">
                 <property name="unit" view="_minimal"/>
                 <property name="description"/>
             </property>
             <property name="quantity"/>
             <property name="qtyfact"/>
+            <property name="additional"/>
         </property>
     </view>
     <view entity="mimismart_Nomenclature" name="nomenclature-view" extends="_minimal">

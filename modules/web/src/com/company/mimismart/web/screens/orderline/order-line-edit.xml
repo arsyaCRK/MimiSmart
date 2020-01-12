@@ -23,6 +23,8 @@
                 </pickerField>
                 <textField id="quantityField" property="quantity"/>
                 <textField id="qtyfactField" property="qtyfact"/>
+                <dateField id="dateFieldDate" property="date"/>
+                <textArea id="textAreaAddit" property="additional"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

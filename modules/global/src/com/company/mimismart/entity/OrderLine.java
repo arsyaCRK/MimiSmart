@@ -4,6 +4,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Table(name = "MIMISMART_ORDER_LINE")
 @Entity(name = "mimismart_OrderLine")
@@ -14,6 +15,10 @@ public class OrderLine extends StandardEntity {
     @JoinColumn(name = "ORDER_ID")
     protected Order_from_supplier order;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATE_")
+    protected Date date;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "NOMENKLATURA_ID")
     protected Nomenclature nomenklatura;
@@ -23,6 +28,25 @@ public class OrderLine extends StandardEntity {
 
     @Column(name = "QTYFACT")
     protected BigDecimal qtyfact;
+
+    @Column(name = "ADDITIONAL")
+    protected String additional;
+
+    public String getAdditional() {
+        return additional;
+    }
+
+    public void setAdditional(String additional) {
+        this.additional = additional;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public BigDecimal getQtyfact() {
         return qtyfact;
