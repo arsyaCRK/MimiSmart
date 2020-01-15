@@ -20,10 +20,13 @@ public class Order_from_supplierEdit extends StandardEditor<Order_from_supplier>
 
     @Inject
     private DateField<Date> dateField;
+    @Inject
+    private DataGrid<OrderLine> order_from_supplierOrderlinesDataGrid;
 
     @Subscribe
     public void onInit(InitEvent event) {
         dateField.setRangeEnd(new Date());
+        order_from_supplierOrderlinesDataGrid.getColumnNN("date");
     }
     
         
