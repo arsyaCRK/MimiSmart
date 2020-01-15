@@ -7,7 +7,7 @@
         <instance id="order_from_supplierDc"
                   class="com.company.mimismart.entity.Order_from_supplier"
                   view="order_with_supplier_and_status">
-            <loader entityId="" id=""/>
+            <loader entityId="" id="order_from_supplierDl"/>
             <collection id="order_from_supplierOrderlinesesDc" property="orderlines">
             </collection>
         </instance>
