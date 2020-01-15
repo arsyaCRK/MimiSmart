@@ -21,5 +21,6 @@ public class Order_from_supplierEdit extends StandardEditor<Order_from_supplier>
     public void onInit(InitEvent event) {
         dateField.setRangeEnd(new Date());
     }
+    
         
 }
