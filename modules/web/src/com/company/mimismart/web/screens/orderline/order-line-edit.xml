@@ -7,7 +7,7 @@
         <instance id="orderLineDc"
                   class="com.company.mimismart.entity.OrderLine"
                   view="orderLine-view">
-            <loader/>
+            <loader entityId=""/>
         </instance>
     </data>
     <dialogMode height="600"

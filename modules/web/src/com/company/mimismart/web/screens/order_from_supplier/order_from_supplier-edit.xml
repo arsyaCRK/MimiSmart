@@ -35,8 +35,8 @@
                 </pickerField>
             </column>
         </form>
-        <dataGrid id="order_from_supplierOrderlinesDataGrid" width="100%" dataContainer="order_from_supplierOrderlinesesDc" editorEnabled="true"
-                  selectionMode="MULTI">
+        <dataGrid id="order_from_supplierOrderlinesDataGrid" width="100%" dataContainer="order_from_supplierOrderlinesesDc"
+                  selectionMode="MULTI" editorEnabled="true">
             <columns>
                 <column property="nomenklatura"/>
                 <column property="nomenklatura.unit.name" editable="false"/>
@@ -51,6 +51,7 @@
                 <action id="remove" type="remove"/>
             </actions>
             <buttonsPanel>
+                <button id="myButton" caption="test"/>
                 <button id="createButton" action="order_from_supplierOrderlinesDataGrid.create"/>
                 <button id="editButton" action="order_from_supplierOrderlinesDataGrid.edit"/>
                 <button id="removeButton" action="order_from_supplierOrderlinesDataGrid.remove"/>
