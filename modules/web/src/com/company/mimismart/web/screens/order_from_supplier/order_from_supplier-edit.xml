@@ -51,7 +51,6 @@
                 <action id="remove" type="remove"/>
             </actions>
             <buttonsPanel>
-                <button id="myButton" caption="test"/>
                 <button id="createButton" action="order_from_supplierOrderlinesDataGrid.create"/>
                 <button id="editButton" action="order_from_supplierOrderlinesDataGrid.edit"/>
                 <button id="removeButton" action="order_from_supplierOrderlinesDataGrid.remove"/>
